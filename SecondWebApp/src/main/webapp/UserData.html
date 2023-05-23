@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>User data</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top:50px">
+<div class="container">
+<h3 style="color:darkcyan">user data form</h3>
+<hr>
+
+<form name="frm" method="post" action="Personalize.jsp">
+
+<table>
+<tbody>
+<tr>
+<td>UserName</td>
+<td><input type="text" name="unm" autocomplete="off"  class="form-control" required></td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td><input type="radio" name="gen" value="male">Male
+	<input type="radio" name="gen" value="female">Female
+</td>
+</tr>
+
+<tr>
+<td>Preferred Genre</td>
+<td>
+	<select name="genre" class="form-control">
+	<option value="action">Action</option>
+	<option value="comedy">Comedy</option>
+	<option value="romance">Romance</option>
+	<option value="horror">Horror</option>
+	</select>
+</td>
+</tr>
+
+<tr>
+<td><input type="submit" value="Submit" class="btn btn-outline-primary"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+</form>
+</div>
+
+</body>
+</html>

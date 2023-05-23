@@ -1,0 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Balance Info</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top:50px">
+<div class="display-7">Account info</div>
+
+</body>
+</html>
