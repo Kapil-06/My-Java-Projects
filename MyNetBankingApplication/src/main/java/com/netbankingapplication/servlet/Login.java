@@ -28,11 +28,12 @@ public class Login extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String id, ps;
+		String id, ps, unm;
 		int ano=0;
+		String atype;
 		Connection con;
-		PreparedStatement pst;
-		ResultSet rs;
+		PreparedStatement pst, pst1;
+		ResultSet rs, rs1;
 		
 		id=request.getParameter("uid");
 		ps=request.getParameter("psw");
@@ -46,12 +47,25 @@ public class Login extends HttpServlet {
 			pst.setString(1, id);
 			pst.setString(2, ps);
 			rs=pst.executeQuery();
+			
+			
 			if(rs.next()){
-				System.out.println("correct");
+				// System.out.println("correct");
 				ano=rs.getInt("accno");
+				unm=rs.getString("usernm");
+
+				pst1=con.prepareStatement("select * from accounts where accno=?");
+				pst1.setInt(1, ano);
+				rs1=pst1.executeQuery();
+				rs1.next();
+				//System.out.println("acctype :"+rs1.getString("acctype"));
+				atype=rs1.getString("acctype");
+				
 				HttpSession ses=request.getSession(true);
 				ses.setAttribute("userid", id);
 				ses.setAttribute("accno", ano);
+				ses.setAttribute("usernm", unm);
+				ses.setAttribute("acctype", atype);
 ;				response.sendRedirect("Customer.jsp");
 			}
 			else {

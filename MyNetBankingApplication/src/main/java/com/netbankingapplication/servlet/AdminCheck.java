@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.sql.*;
 
@@ -44,7 +46,10 @@ public class AdminCheck extends HttpServlet {
 			pst.setString(2, ps);
 			rs=pst.executeQuery();
 			if(rs.next()){
-				
+				String type=rs.getString("usertype").toString();
+				HttpSession ses=request.getSession(true);
+				ses.setAttribute("userid", id);
+				ses.setAttribute("usertype", type);
 				if(rs.getString("usertype").equals("manager"))
 				response.sendRedirect("Manager.jsp");
 				

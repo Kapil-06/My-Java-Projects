@@ -7,7 +7,7 @@
 <title>LoginForm</title>
   <link rel="stylesheet" href="bootstrap.min.css">
   </head>
-  <body style="margin-top: 50px;">
+  <body style="margin-top: 20px;">
     <div class="container">
       <table style="width: 90%; border: 1px solid black none;">
             

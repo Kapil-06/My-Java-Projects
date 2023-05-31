@@ -14,6 +14,7 @@
             Welcome to your Account
         <br><br>
         <ul>
+        <h6 class="display-9"><a href="AccountReport.jsp">Account Report</a></h6>
         <h6 class="display-9"><a href="NewAccount.html">Open New Account</a></h6>
         <h6 class="display-9"><a href="CheckAccount.html">Check Account</a></h6>
         <h6 class="display-9"><a href="CloseAccount.html">Close Account</a></h6>
