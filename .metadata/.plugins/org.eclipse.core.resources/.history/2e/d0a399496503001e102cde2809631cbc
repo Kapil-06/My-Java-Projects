@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- Main Header -->
+<header class="main-header">
+    <center><h1>Development of Online College Year Book</h1></center>
+</header>
+<!-- Dropdown Navbar -->
+<nav>
+    <ul>
+        <li><a href="index.html" class="active" >Home</a></li>
+        <li><a href="login.jsp">Login</a></li>
+        <li><a href="register.jsp">Register</a></li>
+        
+    </ul>
+</nav>
+<br><br><br>
+
+<center><img class="bi" src="img/yearbook.png" alt="" style=""></center>
+<br><br><br>
+<!-- Main Footer -->
+<footer class="main-footer">
+    
+</footer>
+</body>
+
+</html>
