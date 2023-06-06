@@ -1,0 +1,57 @@
+package com.kapil.beans;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class AccountCreator {
+	private int accno;
+	private String accnm;
+	private String acctype;
+	private double balance;
+	private String status;
+	
+	public AccountCreator() {
+		accno=0;
+		accnm="";
+		acctype="";
+		balance=0.0;
+		status="";
+	}
+
+	public void setAccno(int accno) {
+		this.accno = accno;
+	}
+
+	public void setAccnm(String accnm) {
+		this.accnm = accnm;
+	}
+
+	public void setAcctype(String acctype) {
+		this.acctype = acctype;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+
+	public String getStatus() {
+		insertData();
+		return status;
+	}
+	
+	private void insertData() {
+		Connection con;
+		PreparedStatement pst;
+		
+		try {
+			
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			status="error";
+		}
+	}
+	
+	
+	
+}

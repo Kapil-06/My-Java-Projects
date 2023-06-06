@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AccountCreation-Status</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+        <h4>New Account Status</h4>
+        <hr>
+        <br>
+         Account Creation status :<%=session.getAttribute("accstatus") %>
+        <br><br>
+        <a href="index.jsp">Home</a>
+	</div>
+</body>
+</html>

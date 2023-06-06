@@ -7,35 +7,43 @@ import java.sql.*;
 
 public class AccountFinder {
 
-	private int accno;
+	private int ano;
 	private double bal;
-	private String accnm, atype;
+	private String anm, atype;
 	
-	public void AccountFinder() {
-		accno=0;
-		accnm="Not Found";
+	public AccountFinder() {
+		ano=0;
+		anm="Not Found";
 		atype="Not Found";
 		bal=0.0;
 	}
-
+	
 	public double getBal() {
 		return bal;
 	}
 
-	public String getAccnm() {
-		return accnm;
+
+
+	public String getAnm() {
+		return anm;
 	}
+
+
 
 	public String getAtype() {
 		return atype;
 	}
 
-	public void setAccno(int accno) {
-		this.accno = accno;
-		retriveData();
+
+
+	public void setAno(int ano) {
+		this.ano = ano;
+		reteriveData();
 	}
-	
-	private void retriveData() {
+
+
+
+	private void reteriveData() {
 		
 		Connection con;
 		PreparedStatement pst;
@@ -47,12 +55,13 @@ public class AccountFinder {
 			con=DriverManager.getConnection("jdbc:mysql://bhod7pw8rcgxeqwgoffi-mysql.services.clever-cloud.com:3306/bhod7pw8rcgxeqwgoffi?user=ukdmlq4nnteyuvfo&password=stZ2gABP50qLdTH0RS3Q");
 			
 			pst=con.prepareStatement("Select * from accounts where accno=?");
+			pst.setInt(1, ano);
 			rs=pst.executeQuery();
 			
 			if(rs.next()) {
-				accnm=rs.getString("accnm");
+				anm=rs.getString("accnm");
 				atype=rs.getString("acctype");
-				accno=rs.getInt("accno");
+				ano=rs.getInt("accno");
 				bal=rs.getDouble("balance");
 			}
 			con.close();

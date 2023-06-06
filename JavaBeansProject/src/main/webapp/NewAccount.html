@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>NewAccount</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+        <h3>New Account Form</h3>
+        <hr>
+        <form action="AddAccount" method="post">
+            <table>
+                <tr>
+                    <td>Account No. </td>
+                    <td><input type="number" name="ano" class="form-control" id=""></td>
+                </tr>
+                <tr>
+                    <td>Full Name </td>
+                    <td><input type="text" name="anm" class="form-control" id=""></td>
+                </tr>
+                <tr>
+                    <td>Account Type </td>
+                    <td>
+                        <select name="typ" class="form-control" id="">
+                            <option value="saving">Saving</option>
+                            <option value="fixed">Fixed</option>
+                            <option value="current">Current</option>
+                            <option value="ppf">PPF</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Balance </td>
+                    <td><input type="number" name="bal" class="form-control" id=""></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Submit" class="btn btn-outline-primary"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>
