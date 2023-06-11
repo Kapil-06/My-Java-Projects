@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Beans</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+        <h2 class="display-8">-------- AJAX --------</h2>
+        <hr>
+        
+        <br>
+        <a href="SearchAccount.html">Search Account</a>
+		<br>
+		<a href="SearchAccountUsingAjax.html">AJAX -Search Account</a>
+    </div>
+
+</body>
+</html>

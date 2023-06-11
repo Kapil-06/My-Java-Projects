@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Beans</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+        <h2 class="display-8">JAVA Beans</h2>
+        <hr>
+        
+        <br>
+        <a href="Discount.html">Calculate Discount</a>
+		<br>
+		<a href="ExamResult.html">Student Result</a>
+		<br>
+		<a href="SearchAccount.html">Search Account</a>
+		<br>
+		<a href="NewAccount.html">Open New Account</a>
+		<br>
+		<a href="MoneyTransfer.html">Funds Transfer</a>
+		<br>
+		<a href="AccountReportFromBeans.jsp">Account Report</a>
+		<br>
+		<a href="CustomerReportUsingBeans.jsp">Customer Report</a>
+		<br>
+		<a href="MobilesListUsingBeans.jsp">Mobiles List</a>
+    </div>
+
+</body>
+</html>

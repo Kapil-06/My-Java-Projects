@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>MobileSearch</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script type="text/javascript">
+
+	function createRequestObject() {
+    var tmpXmlHttpObject;
+    if (window.XMLHttpRequest) {
+            tmpXmlHttpObject = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    return tmpXmlHttpObject;
+}
+
+
+var http = createRequestObject();
+
+function makeGetRequest() {
+    no=document.frm.accno.value;
+    http.open('get', 'ShowMobileInfo.jsp?company=' + comp);
+    http.onreadystatechange = processResponse;
+    http.send(null);
+}
+
+function processResponse() {
+    if(http.readyState == 4){
+        var response = http.responseText;
+        document.getElementById('res').innerHTML = response;
+    }
+}
+</script>
+
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+        <h2 class="display-8">Search Mobile Details</h2>
+        <hr>
+        <br>
+        <form name="frm">
+            <select name="mob" id="">
+                <option value="apple">Apple</option>
+                <option value="samsung">Samsung</option>
+                <option value="oneplus">OnePlus</option>
+                <option value="google">Google</option>
+                <option value="xiaomi">Xiaomi</option>
+                <option value="vivo">vivo</option>
+                <option value="oppo">Oppo</option>
+                <option value="nokia">Nokis</option>
+                <option value="realme">Realme</option>
+                <option value="poco">Poco</option>
+            </select>
+            <input type="button" value="Search" class="btn btn-dark btn-sm" onchange="makeGetRequest()>
+        </form>
+		
+    </div>
+    <span id='res'></span>
+
+</body>
+</html>

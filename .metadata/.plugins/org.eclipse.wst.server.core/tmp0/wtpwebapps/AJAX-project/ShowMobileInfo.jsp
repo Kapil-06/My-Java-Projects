@@ -1,0 +1,65 @@
+<%@page import="com.kapil.beans.*"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@page import="java.util.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>MobileDetails</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+    <br>
+        <h6>Your Mobile Details</h6>
+        
+        <br>
+        <table class="table table-bordered table-hover">
+            <tr style="background: rgb(213, 161, 204)">
+                <th>ProductID</th>
+                <th>Model Name</th>
+                <th>Connectivity</th>
+                <th>Ram</th>
+                <th>Rom</th>
+                <th>Color</th>
+                <th>Screen</th>
+                <th>Battery</th>
+                <th>Processor</th>
+                <th>Price</th>
+                <th>Rating</th>
+                <th>Purpose</th>
+            </tr>
+            <%
+        	String company=request.getParameter("company");
+        	MobileInfoFinder mif=new MobileInfoFinder();
+        	mif.setCompany(company);
+        	
+        	ArrayList<Mobile> list=mif.getMoblist();
+        	out.println("Total Mobile :"+list.size());
+        	for(int i=0;i<list.size();i++)
+        	{
+        	%> 
+            <tr>
+                <td><%=list.get(i).getProdid() %></td>
+	            <td><%=list.get(i).getModelnm() %></td>
+	            <td><%=list.get(i).getConnectivity() %></td>
+	            <td><%=list.get(i).getRam() %></td>
+	            <td><%=list.get(i).getRom() %></td>
+	            <td><%=list.get(i).getColor() %></td>
+	            <td><%=list.get(i).getScreen() %></td>
+	            <td><%=list.get(i).getBattery() %></td>
+	            <td><%=list.get(i).getProcessor() %></td>
+	            <td><%=list.get(i).getPrice() %></td>
+	            <td><%=list.get(i).getRating() %></td>
+	            <td><%=list.get(i).getPurpose() %></td>
+            </tr>
+            <%
+        	}
+            %>
+        </table>
+    </div>
+
+</body>
+</html>

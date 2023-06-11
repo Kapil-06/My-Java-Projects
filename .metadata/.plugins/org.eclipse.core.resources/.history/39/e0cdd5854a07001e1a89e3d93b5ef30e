@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Account Search</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+        <h2 class="display-8">Search Account Details</h2>
+        <hr>
+        <br>
+        <form action="ShowAccountInfo.jsp" method="post">
+            <label for="accno">Account No :</label>
+            <input type="number" name="accno" id="" class="form-control">
+            <input type="submit" value="Search">
+        </form>
+       
+		
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SearchCar</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script type="text/javascript">
+	function createRequestObject() {
+    var tmpXmlHttpObject;
+    if (window.XMLHttpRequest) {
+            tmpXmlHttpObject = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+        tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    return tmpXmlHttpObject;
+}
+
+
+var http = createRequestObject();
+
+function makeGetRequest() {
+    comp=document.frm.company.value;
+    http.open('get', 'ShowCarInfo.jsp?company=' + comp);
+    http.onreadystatechange = processResponse;
+    http.send(null);
+}
+
+function processResponse() {
+    if(http.readyState == 4){
+        var response = http.responseText;
+        document.getElementById('res').innerHTML = response;
+    }
+}
+</script>
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+        <h2 class="display-8">Search Car Details</h2>
+        <hr>
+        <br>
+        <form name="frm">
+        Select Car :
+            <select name="car" class="form-control-sm" onchnage="makegetrequest()">
+                <option value="FORD">Ford</option>
+                <option value="BMW">BMW</option>
+                <option value="HYUNDAI">HYUNDAI</option>
+                <option value="honda">HONDA</option>
+                <option value="audi">AUDI</option>
+                <option value="mercedes">MERCEDES</option>
+                <option value="tata">TATA</option>
+                <option value="toyota">TOYATO</option>
+                <option value="volkswagen">Volkswagen</option>
+            </select>
+        </form>
+       <div id="res"></div>
+		
+    </div>
+
+</body>
+</html>
