@@ -1,0 +1,43 @@
+<%@page import="com.kapil.beans.*"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>MobileDetails</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+    <br>
+        <h6>Your Mobile Details</h6>
+        <%
+        String company=request.getParameter("company");
+        MobileInfoFinder mif=new MobileInfoFinder();
+        mif.setCompany(company);
+        ArrayList<Mobile> list=mif.getMoblist();
+        %>
+        <br>
+        <table class="table table-bordered table-hover">
+            <tr style="background: rgb(213, 161, 204)">
+                <td><%= %></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

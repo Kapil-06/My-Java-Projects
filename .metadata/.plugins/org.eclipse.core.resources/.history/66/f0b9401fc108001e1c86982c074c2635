@@ -1,0 +1,9 @@
+package com.kapil.beans;
+
+public class AccountFinder {
+	
+	private int accno;
+	private String accnm;
+	private String acctype;
+	private double balance;
+}

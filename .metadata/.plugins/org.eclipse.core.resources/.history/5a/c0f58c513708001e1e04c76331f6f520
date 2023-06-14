@@ -1,0 +1,43 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.kapil.beans.*"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>CarDetails</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top:50px">
+    <div class="container">
+
+        <table class="table table-bordered table-hover">
+            <tr style="background-color: rgb(171, 217, 217);">
+                <th>ProductID</th>
+                <th>Model</th>
+                <th>Price</th>
+            </tr>
+            <%
+            String company=request.getParameter("compny");
+            CarInfoFinder cif=new CarInfoFinder();
+            cif.setCompany(company);
+            
+            ArrayList<Car> list=cif.getCarList();
+            out.println("Total Mobile :"+list.size());
+            for(int i=0;i<list.size();i++)
+            {
+            %>
+            <tr>
+                <td><%=list.getProdid() %></td>
+                <td><%=list.getProdnm() %></td>
+                <td><%=list.getPrice() %></td>
+            </tr>
+            <%
+            }
+            %>
+        </table>
+
+    </div>
+</body>
+</html>

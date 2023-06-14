@@ -1,0 +1,28 @@
+package com.kapil.beans;
+
+import java.sql.Connection;
+import java.sql.*;
+import java.util.ArrayList;
+
+public class MobileInfoFinder {
+	
+	private static final String PreparedStatement = null;
+	private String company;
+	private ArrayList<Mobile> moblist;
+	
+	public MobileInfoFinder() {
+		moblist=new ArrayList();
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+		retrieveData();
+	}
+	
+	private void retrieveData() {
+		
+		Connection con;
+		PreparedStatement pst;
+		ResultSet rs;
+	}
+}

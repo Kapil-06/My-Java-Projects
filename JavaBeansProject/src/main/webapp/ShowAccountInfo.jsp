@@ -1,0 +1,35 @@
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@page import="com.kapil.beans.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AccountInfo</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+        <h3>Account Details</h3>
+        <hr>
+        <br>
+        <%
+        int accno;
+        accno=Integer.parseInt(request.getParameter("ano"));
+        AccountFinder af=new AccountFinder();
+        af.setAno(accno);
+        %>
+        Account No. : <%=accno %>
+        <br>
+        Accountant Name : <%=af.getAnm() %>
+        <br>
+        Account Type : <%=af.getAtype() %>
+         
+        <br>
+        Balance : <%=af.getBal() %>
+        <br>
+        <br>
+        <a href="index.jsp">Home</a>
+    </div>
+</body>
+</html>

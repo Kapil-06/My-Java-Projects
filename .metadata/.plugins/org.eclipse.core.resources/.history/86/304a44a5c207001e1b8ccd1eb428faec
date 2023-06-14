@@ -1,0 +1,64 @@
+package com.kapil.beans;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+public class MobileInfoFinder {
+	
+	private String company;
+	private ArrayList<Mobile> moblist;
+	
+	public MobileInfoFinder() {
+		moblist=new ArrayList<>();
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+		retrieveData();
+	}
+
+	public void retrieveData(){
+		
+		moblist=new ArrayList<>();
+		Connection con;
+		PreparedStatement pst;
+		ResultSet rs;
+		Mobile obj;
+		try {
+			CloudDBConnector db=new CloudDBConnector();
+			con=db.getConn();
+			
+			pst=con.prepareStatement("Select * from MOBILES where company=?");
+			pst.setString(1, company);
+			rs=pst.executeQuery();
+			
+			while(rs.next()) {
+				obj=new Mobile();
+				obj.setProdid(rs.getInt("prodid"));
+				obj.setColor(rs.getString("color"));
+				obj.setConnectivity(rs.getString("connectivity"));
+				obj.setModelnm(rs.getString("modelnm"));
+				obj.setPrice(rs.getFloat("price"));
+				obj.setProcessor(rs.getString("processor"));
+				obj.setPurpose(rs.getString("purpose"));
+				obj.setRam(rs.getString("ram"));
+				obj.setRom(rs.getString("rom"));
+				obj.setRating(rs.getFloat("rating"));
+				obj.setScreen(rs.getString("screen"));
+				obj.setBattery(rs.getInt("battery"));
+				obj.setCompany(rs.getString("company"));
+				moblist.add(obj);
+			}
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+	public ArrayList<Mobile> getMoblist() {
+		return moblist;
+	}
+	
+}

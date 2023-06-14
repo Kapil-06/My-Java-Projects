@@ -1,0 +1,81 @@
+package com.kapil.beans;
+
+public class Mobile {
+	
+	int prodid, battery;
+	float price, rating;
+	String modelnm, company, connectivity;
+	String ram, rom, color, screen;
+	String processor, purpose;
+	
+	public Mobile() {
+		
+		prodid=0;
+		battery=0;
+		price=0;
+		rating=0;
+		modelnm="";
+		company="";
+		connectivity="";
+		ram="";
+		rom="";
+		color="";
+		screen="";
+		processor="";
+		purpose="";
+		
+	}
+
+	public int getProdid() {
+		return prodid;
+	}
+
+	public int getBattery() {
+		return battery;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public float getRating() {
+		return rating;
+	}
+
+	public String getModelnm() {
+		return modelnm;
+	}
+
+	public String getConnectivity() {
+		return connectivity;
+	}
+
+	public String getRam() {
+		return ram;
+	}
+
+	public String getRom() {
+		return rom;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public String getScreen() {
+		return screen;
+	}
+
+	public String getProcessor() {
+		return processor;
+	}
+
+	public String getPurpose() {
+		return purpose;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+}

@@ -1,0 +1,7 @@
+package com.kapil.beans;
+
+public class Mobile {
+	
+	private int prodid,, battery, processor, price, rating
+	modelname, company, connectivity, ram, rom, color, screen
+}

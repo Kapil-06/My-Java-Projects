@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SelectAccount</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script type="text/javascript">
+    function createRequestObject() {
+        var tmpXmlHttpObject;
+        if (window.XMLHttpRequest) {
+                tmpXmlHttpObject = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    
+        return tmpXmlHttpObject;
+    }
+    
+    
+    var http = createRequestObject();
+    
+    function makeGetRequest() {
+        no=document.frm.accno.value;
+        http.open('get', 'ShowAccountDetails.jsp?accno=' + no);
+        http.onreadystatechange = processResponse;
+        http.send(null);
+    }
+    
+    function processResponse() {
+        if(http.readyState == 4){
+            var response = http.responseText;
+            document.getElementById('res').innerHTML = response;
+        }
+    }
+</script>
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+        <h4>Search Account</h4>
+        <hr>
+        <br>
+        <form name="frm">
+            Account Number :
+            <input type="number" name="accno" class="form-control-sm">
+            <input type="button" value="Search" class="btn btn-outline-dark" onclick="makeGetRequest()">
+        </form>
+		<div class="container" style="margin-left: 30px;" id="res"></div>
+    </div>
+
+</body>
+</html>

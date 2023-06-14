@@ -1,0 +1,11 @@
+INDEX VERSION 1.132+E:\FullStackJava Class\eclipse-jee-2023-03-R-win32-x86_64\Java Project\.metadata\.plugins\org.eclipse.jdt.core
+556432260.index
+3950299340.index
+715407664.index
+4274178690.index
+627922799.index
+1865797976.index
+3861365938.index
+2478277220.index
+3733848429.index
+2276195143.index

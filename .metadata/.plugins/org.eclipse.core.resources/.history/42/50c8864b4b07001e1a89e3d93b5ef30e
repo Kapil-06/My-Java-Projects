@@ -1,0 +1,17 @@
+package com.kapil.beans;
+
+import java.sql.DriverManager;
+
+public class CloudDBConnector {
+
+	private Connection conn;
+	
+	try {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		conn=DriverManager.getConnection("jdbc:mysql://bhod7pw8rcgxeqwgoffi-mysql.services.clever-cloud.com:3306/bhod7pw8rcgxeqwgoffi?user=ukdmlq4nnteyuvfo&password=stZ2gABP50qLdTH0RS3Q");
+		
+	}
+	catch(Exception e) {
+		System.out.println(e);
+	}
+}

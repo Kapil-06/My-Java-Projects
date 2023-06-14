@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Account Search</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script type="text/javascript">
+	function test(){
+		alert("thanks for click")
+	}	
+</script>
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+        <h2 class="display-8">Search Account Details</h2>
+        <hr>
+        <br>
+        <form name="frm">
+            <label for="accno">Account No :</label>
+            <input type="number" name="accno" id="" class="form-control-sm">
+            <input type="button" value="Search" class="btn btn-dark btn-sm" onclick="test()">
+        </form>
+       
+		
+    </div>
+</body>
+</html>

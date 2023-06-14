@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Online_Oxygen_Cylinder_System&apos;" deleteContents="true" description="Delete resource &apos;Online_Oxygen_Cylinder_System&apos;" element1="/Online_Oxygen_Cylinder_System" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1684891517051"/>
+</session>

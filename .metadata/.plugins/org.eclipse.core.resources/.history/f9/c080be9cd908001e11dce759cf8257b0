@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SearchAccount</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+        <h4>Search Account</h4>
+        <hr>
+        <br>
+        <form action="AccountFinder" method="post">
+            Account Number :
+            <input type="number" name="accno" class="form-control-sm">
+            <input type="submit" value="Search" class="btn btn-outline-dark">
+        </form>
+		
+    </div>
+
+
+</body>
+</html>

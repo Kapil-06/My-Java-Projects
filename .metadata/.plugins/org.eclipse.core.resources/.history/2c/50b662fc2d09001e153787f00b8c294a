@@ -1,0 +1,23 @@
+package com.kapil.beans;
+
+public class Mobile {
+	
+	private int prodid;
+	private String modelname, company, connectivity, ram, rom, color, screen,processor;
+	private float battery, price, rating;
+	
+	public Mobile() {
+		prodid=0; 
+		modelname=""; 
+		company=""; 
+		connectivity=""; 
+		ram="";
+		rom="";
+		color="";
+		screen="";
+		battery=0; 
+		processor="";
+		price=0; 
+		rating=0;
+	}
+}
