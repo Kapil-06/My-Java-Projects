@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>NewRegistration</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script type="text/javascript">
+    function createRequestObject() {
+        var tmpXmlHttpObject;
+        if (window.XMLHttpRequest) {
+                tmpXmlHttpObject = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    
+        return tmpXmlHttpObject;
+    }
+    
+    
+    var http = createRequestObject();
+    
+    function makeGetRequest() {
+        id=document.frm.uid.value;
+        http.open('get', 'UseridAvailable.jsp?accno=' + id);
+        http.onreadystatechange = processResponse;
+        http.send(null);
+    }
+    
+    function processResponse() {
+        if(http.readyState == 4){
+            var response = http.responseText;
+            document.getElementById('res').innerHTML = response;
+        }
+    }
+</script>
+</head>
+<body style="margin-top: 50px; margin-left: 150px; background-color: rgb(163, 180, 211);">
+    <div class="container">
+    <form name="frm" action="Register" method="post">
+        <table style="border:0px solid black;  width:350px; height: 100%;">
+            <tr style="border:0px solid black">
+                <td>   
+                                
+                    <div class="form-outline mb-3">
+                        <input type="text" name="uid" class="form-control"  placeholder="UserID">
+                        <div id="res" ></div>
+                    </div>
+                                  
+                    <div class="form-outline mb-3">
+                        <input type="password" name="psw"  class="form-control" placeholder="password" onfocus="makeGetRequest()">
+                    </div>
+
+                    <div class="form-outline mb-3">
+                        <input type="text" name="unm" class="form-control" placeholder="UserName">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" >UserType</span>
+                        <input type="text" class="form-control" placeholder="Customer" disable readonly>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">UserStatus</span>
+                        <input type="text" class="form-control"  placeholder="Active" disable readonly>
+                    </div>
+
+                    <div class="form-outline mb-3">
+                        <input type="number" name="ano" class="form-control" placeholder="Account Number">
+                    </div>
+
+                    <div class="form-outline mb-3">    
+                        <select name="brn" class="form-control">
+                            <option selected disabled>Branch</option>
+                            <option value="mumbai">Mumbai</option>
+                            <option value="pune">Pune</option>
+                            <option value="nagpur">Nagpur</option>
+                            <option value="amravati">Amravati</option>
+                        </select>   
+                    </div>
+
+                    <div class="form-outline mb-3">
+                        <input type="tel" name="mob" class="form-control" placeholder="Mobile No">
+                    </div>
+                  
+                    <div class="d-grid gap-2">
+                        <input type="submit" value="Register" class="btn btn-outline-dark">
+                    </div>
+                                  
+                    <p class="text-center text-muted mt-4 mb-0">Have already an account? <a href="index.jsp" class="fw-bold text-body"><u>Login here</u></a>
+                    </p>
+                                
+                </td>
+            </tr>
+        </table>
+    </form>
+    </div>
+</body>
+</html>

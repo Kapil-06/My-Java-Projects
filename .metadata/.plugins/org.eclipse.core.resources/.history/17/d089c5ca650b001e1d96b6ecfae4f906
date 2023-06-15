@@ -1,0 +1,28 @@
+<%@page import="com.kapil.beans.UserStatusFinder"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>UserStatus</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+	<%
+	String id=request.getParameter("uid");
+	UserStatusFinder usf=new UserStatusFinder();
+	usf.setUserid(id);
+	
+	String stat=usf.getStatus();
+	if(stat.equals("failed"))
+	{
+	%>
+	<span style="color: crimson;">Sorry userid is not available</span>
+	}
+	%>
+    
+    </div>
+</body>
+</html>
