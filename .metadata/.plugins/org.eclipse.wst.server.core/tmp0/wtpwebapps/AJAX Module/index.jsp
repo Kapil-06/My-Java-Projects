@@ -21,6 +21,8 @@
 		<a href="SearchMobileInfo.html">AJAX -Search Mobile</a>
 		<br>
 		<a href="Registration.html">AJAX -User Registration</a>
+		<br>
+		<a href="TransferAmount.html">AJAX -AmountTransfer</a>
     </div>
 </body>
 </html>
