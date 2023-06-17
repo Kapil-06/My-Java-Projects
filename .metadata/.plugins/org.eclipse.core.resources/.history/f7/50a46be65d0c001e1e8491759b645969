@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AccountTypeInfo</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script type="text/javascript">
+
+        function createRequestObject() {
+        var tmpXmlHttpObject;
+        if (window.XMLHttpRequest) {
+                tmpXmlHttpObject = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    
+        return tmpXmlHttpObject;
+    }
+    
+    
+    var http = createRequestObject();
+    
+    function makeGetRequest(type) {
+        
+        http.open('get', 'SearchAccTypeReport.jsp?acctype=' + type);
+        http.onreadystatechange = processResponse;
+        http.send(null);
+    }
+    
+    function processResponse() {
+        if(http.readyState == 4){
+            var response = http.responseText;
+            document.getElementById('info').innerHTML = response;
+        }
+    }
+    }
+</script>
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+        <h3>Get Account Information on Type</h3>
+        <hr>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="javascript:makeGetRequest('saving')">Saving</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:makeGetRequest('fixed')">Fixed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:makeGetRequest('current')">Current</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:makeGetRequest('ppf')">PPF</a>
+            </li>
+        </ul>
+        <br>
+        <div class="container" style="margin-left:30px" id="info"></div>
+
+    </div>
+</body>
+</html>

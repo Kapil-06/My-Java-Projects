@@ -1,0 +1,32 @@
+package com.kapil.beans;
+
+public class Account {
+	
+	private int accno;
+	private String accnm, acctype;
+	private double balance;
+	
+	public Account() {
+		accno=0;
+		accnm="";
+		acctype="";
+		balance=0;
+	}
+
+	public int getAccno() {
+		return accno;
+	}
+
+	public String getAccnm() {
+		return accnm;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setAcctype(String acctype) {
+		this.acctype = acctype;
+	}
+	
+}

@@ -1,0 +1,40 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.kapil.beans.*"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AccountReport</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+	
+        <%
+        String type=request.getParameter("acctype");
+        System.out.println(type);
+        %>
+		<h2><%=type %> Account report</h2>
+
+        <table>
+            <tr>
+                <th>Account Number</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Balance</th>
+            </tr>
+            <%
+            AccountTypeReport tr=new AccountTypeReport();
+            tr.setBalance();
+            
+            ArrayList<Account> list=tr.getAcclist();
+            for(int i=0;i<list.size();i++){
+            	
+            }
+            %>
+        </table>
+    </div>
+</body>
+</html>

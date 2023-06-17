@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AccountTypeInfo</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+        <h4>Get Account Information by Type</h4>
+        <hr>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Saving</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Fixed</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Current</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">PPF</a>
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>
