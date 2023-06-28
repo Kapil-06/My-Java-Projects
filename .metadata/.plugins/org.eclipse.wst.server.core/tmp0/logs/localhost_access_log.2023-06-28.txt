@@ -3,3 +3,9 @@
 0:0:0:0:0:0:0:1 - - [28/Jun/2023:07:23:16 +0530] "GET /favicon.ico HTTP/1.1" 404 762
 0:0:0:0:0:0:0:1 - - [28/Jun/2023:07:23:19 +0530] "GET /HibernateModule/NewEmp.html HTTP/1.1" 404 782
 0:0:0:0:0:0:0:1 - - [28/Jun/2023:07:23:25 +0530] "GET /HibernateModule/NewEmp.html HTTP/1.1" 404 782
+127.0.0.1 - - [28/Jun/2023:07:26:35 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [28/Jun/2023:07:26:36 +0530] "GET /HibernateModule/ HTTP/1.1" 200 487
+0:0:0:0:0:0:0:1 - - [28/Jun/2023:07:26:39 +0530] "GET /HibernateModule/AddNewEmp.html HTTP/1.1" 200 2067
+0:0:0:0:0:0:0:1 - - [28/Jun/2023:07:27:37 +0530] "POST /HibernateModule/NewEmp HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [28/Jun/2023:07:27:37 +0530] "GET /HibernateModule/EmpAdded.jsp HTTP/1.1" 200 362
+0:0:0:0:0:0:0:1 - - [28/Jun/2023:07:27:42 +0530] "GET /HibernateModule/index.jsp HTTP/1.1" 200 487
