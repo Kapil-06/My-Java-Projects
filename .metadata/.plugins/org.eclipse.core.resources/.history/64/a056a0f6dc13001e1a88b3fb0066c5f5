@@ -1,0 +1,75 @@
+package com.kapil.servlet;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.kapil.entities.Employee;
+
+/**
+ * Servlet implementation class NewEmp
+ */
+public class NewEmp extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public NewEmp() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		int empno;
+		String empnm, dept, location, post;
+		float salary;
+		
+		try {
+			empno=Integer.parseInt(request.getParameter("empno"));
+			empnm=request.getParameter("empnm");
+			dept=request.getParameter("dept");
+			post=request.getParameter("post");
+			location=request.getParameter("location");
+			salary=Float.parseFloat(request.getParameter("salary"));
+			
+			
+			Employee obj=new Employee();
+			obj.setEmpno(empno);
+			obj.setEmpnm(empnm);
+			obj.setDept(dept);
+			obj.setPost(post);
+			obj.setLocation(location);
+			obj.setSalary(salary);
+			
+			
+			Configuration cfg=new Configuration().configure();
+			SessionFactory sf=cfg.addAnnotatedClass(Employee.class).buildSessionFactory();
+			Session ses=sf.getCurrentSession();
+			ses.beginTransaction();
+			
+			ses.persist(obj);
+			ses.getTransaction().commit();
+			
+			response.sendRedirect("EmpAdded.jsp");
+			
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			response.sendRedirect("empAddedFailed");
+		}
+	}
+
+}

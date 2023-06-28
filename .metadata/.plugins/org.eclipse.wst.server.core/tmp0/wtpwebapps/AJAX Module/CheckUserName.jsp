@@ -7,6 +7,7 @@
 <meta charset="ISO-8859-1">
 <title>AmountTransfer</title>
 <link rel="stylesheet" href="bootstrap.min.css">
+</head>
 <body style="margin-top: 50px;">
 <div class="container">
 

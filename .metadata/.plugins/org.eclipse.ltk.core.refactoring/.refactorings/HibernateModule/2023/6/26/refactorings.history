@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;HibernateModule/src/main/webapp/NewEmp.html&apos; to &apos;AddNewEmp.html&apos;" description="Rename resource &apos;NewEmp.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/NewEmp.html" name="AddNewEmp.html" stamp="1687877625502" updateReferences="true"/>
+</session>

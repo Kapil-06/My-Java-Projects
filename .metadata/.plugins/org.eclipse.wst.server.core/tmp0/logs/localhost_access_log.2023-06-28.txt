@@ -1,0 +1,5 @@
+127.0.0.1 - - [28/Jun/2023:07:23:15 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [28/Jun/2023:07:23:16 +0530] "GET /HibernateModule/ HTTP/1.1" 200 484
+0:0:0:0:0:0:0:1 - - [28/Jun/2023:07:23:16 +0530] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [28/Jun/2023:07:23:19 +0530] "GET /HibernateModule/NewEmp.html HTTP/1.1" 404 782
+0:0:0:0:0:0:0:1 - - [28/Jun/2023:07:23:25 +0530] "GET /HibernateModule/NewEmp.html HTTP/1.1" 404 782

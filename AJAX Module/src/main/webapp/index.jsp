@@ -23,8 +23,6 @@
 		<a href="Registration.html">AJAX -User Registration</a>
 		<br>
 		<a href="TransferAmount.html">AJAX -AmountTransfer</a>
-		<br>
-		<a href="AccountTypeInfo.html">AJAX -AccountTypeInfo</a>
     </div>
 </body>
 </html>

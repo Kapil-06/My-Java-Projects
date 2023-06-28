@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AddEmp</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+
+        <h3>--------------Add New Employee-------------- </h3>
+        <hr>
+        <br>
+        <form action="NewEmp" method="post">
+        <table>
+            <tr>
+                <td>Employee Number</td>
+                <td><input type="number" name="empno" required class="form-control" autocomplete="off"></td>
+            </tr>
+            <tr>
+                <td>Name </td>
+                <td><input type="text" name="empnm" required class="form-control" autocomplete="off"></td>
+            </tr>
+            <tr>
+                <td>Department </td>
+                <td>
+                    <select name="dept" class="form-control" required>
+                        <option value="admin">Admin</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="sales">Sales</option>
+                        <option value="developer">Development</option>
+                        <option value="finance">Finance</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Post </td>
+                <td><input type="text" name="post" required class="form-control" autocomplete="off"></td>
+            </tr>
+            <tr>
+                <td>Location </td>
+                <td><input type="text" name="location" required class="form-control" autocomplete="off"></td>
+            </tr>
+            <tr>
+                <td>Salary </td>
+                <td><input type="number" name="salary" required class="form-control" autocomplete="off"></td>
+            </tr>
+            
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Add" class="btn btn-outline-primary"></td>
+            </tr>
+        </table>
+        </form>
+    </div>
+</body>
+</html>
