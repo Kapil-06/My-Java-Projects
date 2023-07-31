@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>AmountTransfer</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script type="text/javascript">
+    function createRequestObject() {
+        var tmpXmlHttpObject;
+        if (window.XMLHttpRequest) {
+                tmpXmlHttpObject = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    
+        return tmpXmlHttpObject;
+    }
+    
+    
+    var http = createRequestObject();
+    
+    function makeGetRequest() {
+        no=document.frm.accno.value;
+        http.open('get', 'CheckUserName.jsp?accno=' + no);
+        http.onreadystatechange = processResponse;
+        http.send(null);
+    }
+    
+    function processResponse() {
+        if(http.readyState == 4){
+            var response = http.responseText;
+            document.getElementById('info').innerHTML = response;
+        }
+    }
+</script>
+</head>
+<body style="margin-top: 50px; margin-left: 150px; background-color: rgb(163, 180, 211);">
+    <div class="container">
+    <form name="frm">
+        <table style="border:0px solid black;  width:350px; height: 100%;">
+            <tr style="border:0px solid black">
+                <td>   
+                                
+                    <div class="form-outline mb-3">
+                        <input type="number" name="accno" class="form-control"  placeholder="Account Number">
+                        <div id="info" ></div>
+                    </div>
+                                  
+                    <div class="form-outline mb-3">
+                        <input type="number" name="amt"  class="form-control" placeholder="Amount" onfocus="makeGetRequest()">
+                    </div>
+
+                    <div class="form-outline mb-3">    
+                        <select name="type" class="form-control">
+                            <option selected disabled>Type</option>
+                            <option value="mumbai">Saving</option>
+                            <option value="pune">Current</option>
+                            <option value="nagpur">Fixed</option>
+                            <option value="amravati">ppf</option>
+                        </select>   
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <input type="submit" value="Transfer" class="btn btn-outline-dark">
+                    </div>
+                </td>
+            </tr>
+        </table>
+	</form>
+</body>
+</html>

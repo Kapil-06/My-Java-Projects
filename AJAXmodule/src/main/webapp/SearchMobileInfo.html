@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SelectMobile</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script type="text/javascript">
+    function createRequestObject() {
+        var tmpXmlHttpObject;
+        if (window.XMLHttpRequest) {
+                tmpXmlHttpObject = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+    
+        return tmpXmlHttpObject;
+    }
+    
+    
+    var http = createRequestObject();
+    
+    function makeGetRequest() {
+        comp=document.frm.company.value;
+        http.open('get', 'ShowMobileInfo.jsp?company=' + comp);
+        http.onreadystatechange = processResponse;
+        http.send(null);
+    }
+    
+    function processResponse() {
+        if(http.readyState == 4){
+            var response = http.responseText;
+            document.getElementById('res').innerHTML = response;
+        }
+    }
+</script>
+</head>
+<body style="margin-top: 50px;">
+    <div class="container">
+        <h4>Search Mobile Details</h4>
+        <hr>
+        <br>
+        <form name="frm">
+            Select Brand :
+            <select name="company" class="form-control-sm" onchange="makeGetRequest()">
+                <option value="Apple">Apple</option>
+                <option value="Google">Google</option>
+                <option value="Nokia">Nokia</option>
+                <option value="OnePlus">Oneplus</option>
+                <option value="Oppo">Oppo</option>
+                <option value="Poco">Poco</option>
+                <option value="Realme">Realme</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Vivo">Vivo</option>
+                <option value="Xiaomi">Xiaomi</option>
+            </select>
+        </form>
+        <br>
+		<div class="container" style="margin-left: 30px; margin-right: 30px;" id="res"></div>
+    </div>
+</body>
+</html>
