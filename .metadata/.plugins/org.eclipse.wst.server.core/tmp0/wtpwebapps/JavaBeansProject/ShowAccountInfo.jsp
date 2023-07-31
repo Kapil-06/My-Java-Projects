@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page import="com.kapil.beans.*" %>
 <!DOCTYPE html>
@@ -15,8 +15,6 @@
         <br>
         <%
         int accno;
-        
-        
         accno=Integer.parseInt(request.getParameter("ano"));
         AccountFinder af=new AccountFinder();
         af.setAno(accno);
